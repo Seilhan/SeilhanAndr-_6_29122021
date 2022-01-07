@@ -2,10 +2,37 @@
     display: none;
 }
 
-.photograph-header {
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    margin: 20px 140px;
+    padding: 0 30px;
+    max-width: 1400px;
+}
+
+#profil {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    margin: 30px 100px;
+    gap: 80px;
+}
+
+.photographer-hearder {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .contact_button {
@@ -73,4 +100,124 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+.select-box {
+    position: relative;
+    margin: 0 auto;
+    color: white;
+    display: inline-block;
+    min-width: 150px;
+    background: #901c1c;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+.select-box__current {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.select-box__current:focus+.select-box__list {
+    opacity: 1;
+    z-index: 0;
+    animation-name: none;
+}
+
+.select-box__current:focus+.select-box__list .select-box__option {
+    cursor: pointer;
+}
+
+.select-box__current:focus .select-box__icon {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.select-box__icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 15px;
+    z-index: 3;
+    transition: 0.2s ease;
+}
+
+.select-box__value {
+    display: flex;
+}
+
+.select-box__input {
+    display: none;
+}
+
+.select-box__input:checked+.select-box__input-text {
+    display: block;
+    pointer-events: none;
+}
+
+.select-box__input-text {
+    display: none;
+    width: 100%;
+    margin: 0;
+    color: white;
+    padding: 0 15px;
+    height: 50px;
+    box-sizing: border-box;
+    line-height: 50px;
+}
+
+.select-box__list {
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0;
+    overflow: auto;
+    margin: 0;
+    background: red;
+    list-style: none;
+    opacity: 0;
+    z-index: -1;
+    top: 10px;
+    margin-top: -10px;
+    box-shadow: 0 5px 6px rgb(0 0 0 / 20%);
+}
+
+.select-box__list li {
+    position: relative;
+}
+
+.select-box__list li:not(:last-child):after {
+    content: " ";
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    display: block;
+    height: 1px;
+    background: white;
+    bottom: 0;
+}
+
+.select-box__option {
+    display: block;
+    padding: 0 15px;
+    height: 50px;
+    position: relative;
+    color: white;
+    background-color: #901c1c;
+    line-height: 50px;
+}
+
+.select-box__option:hover,
+.select-box__option:focus {
+    background: #d3573c;
+}
+
+@keyframes HideList {
+    from {
+        transform: scaleY(1);
+    }
+    to {
+        transform: scaleY(0);
+    }
 }
