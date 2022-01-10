@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Fisheye - photographe </title>
 </head>
 
@@ -29,6 +30,10 @@
                 <img width="100" src="assets/images/Sample Photos/Photographers ID Photos/MimiKeel.jpg" alt="Mimi Keel">
             </div>
         </section>
+        <aside id="widget">
+            <span id="widget__like-count">680</span>
+            <span>400€/jour</span>
+        </aside>
         <section id="filter">
             <div class="filter-selector">
                 <span id="filter__title" tabindex="0">Trier par</span>
@@ -48,27 +53,132 @@
                             <p class="select-box__input-text">Titre</p>
                         </div>
                         <img class="select-box__icon" src="assets/icons/arrow.svg" alt="Arrow Icon" aria-hidden="true" />
+                        <ul class="select-box__list">
+                            <li>
+                                <label class="select-box__option" for="0" aria-hidden="aria-hidden">Popularité</label>
+                            </li>
+                            <li>
+                                <label class="select-box__option" for="1" aria-hidden="aria-hidden">Date</label>
+                            </li>
+                            <li>
+                                <label class="select-box__option" for="2" aria-hidden="aria-hidden">Titre</label>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="select-box__list">
-                        <li>
-                            <label class="select-box__option" for="0" aria-hidden="aria-hidden">Popularité</label>
-                        </li>
-                        <li>
-                            <label class="select-box__option" for="1" aria-hidden="aria-hidden">Date</label>
-                        </li>
-                        <li>
-                            <label class="select-box__option" for="2" aria-hidden="aria-hidden">Titre</label>
-                        </li>
-                    </ul>
+
                 </div>
             </div>
         </section>
+        <section id="card__photographer">
+            <ul class="cards__list">
+                <li class="card__list card__list--video">
+                    <video controls class="card__list--cover" width="100" src="/assets/images/Sample Photos/Mimi/Animals_Wild_Horses_in_the_mountains.mp4" tabindex="0" alt=""></video>
+                    <div class="card__list--content">
+                        <h2 class="card__list--content--title" tabindex="0">Wild Horses in the mountains</h2>
+                        <div class="card__list--content--like">
+                            <label id="like-5234343" for="like-5234343-input" class="like__counter">142</label>
+                            <input id="like-5234343-input" aria-label="142 j'aime" class="like__input" type="checkbox">
+                        </div>
+                    </div>
+                </li>
+                <li class="card__list card__list--picture">
+                    <img class="card__list--cover" width="100" src="/assets/images/Sample Photos/Mimi/Animals_Rainbow.jpg" tabindex="0" alt="">
+                    <div class="card__list--content">
+                        <h2 class="card__list--content--title" tabindex="0">Bird rainbow</h2>
+                        <div class="card__list--content--like">
+                            <label id="like-95234343" for="like-95234343-input" class="like__counter">59</label>
+                            <input id="like-95234343-input" aria-label="59 j'aime" class="like__input" type="checkbox">
+                        </div>
+                    </div>
+                </li>
+                <li class=" card__list card__list--picture">
+                    <img class="card__list--cover" width="100" src="/assets/images/Sample Photos/Mimi/Event_BenevidesWedding.jpg" tabindex="0" alt="">
+                    <div class="card__list--content">
+                        <h2 class="card__list--content--title" tabindex="0">Benevides wedding</h2>
+                        <div class="card__list--content--like">
+                            <label id="like-23523434" for="like-23523434-input" class="like__counter">77</label>
+                            <input id="like-23523434-input" aria-label="77 j'aime" class="like__input" type="checkbox">
+                        </div>
+                    </div>
+                </li>
+                <li class="card__list card__list--picture">
+                    <img class="card__list--cover" width="100" src="/assets/images/Sample Photos/Mimi/Event_PintoWedding.jpg" tabindex="0" alt="">
+                    <div class="card__list--content">
+                        <h2 class="card__list--content--title" tabindex="0">Pinto wedding</h2>
+                        <div class="card__list--content--like">
+                            <label id="like-65235234" for="like-65235234-input" class="like__counter">52</label>
+                            <input id="like-65235234-input" aria-label="52 j'aime" class="like__input" type="checkbox">
+                        </div>
+                    </div>
+                </li>
+                <li class="card__list card__list--picture">
+                    <img class="card__list--cover" width="100" src="/assets/images/Sample Photos/Mimi/Event_SeasideWedding.jpg" tabindex="0" alt="">
+                    <div class="card__list--content">
+                        <h2 class="card__list--content--title" tabindex="0">Seaside wedding</h2>
+                        <div class="card__list--content--like">
+                            <label id="like-2534342" for="like-2534342-input" class="like__counter">25</label>
+                            <input id="like-2534342-input" aria-label="25 j'aime" class="like__input" type="checkbox">
+                        </div>
+                    </div>
+                </li>
+                <li class="card__list card__list--picture">
+                    <img class="card__list--cover" width="100" src="/assets/images/Sample Photos/Mimi/Portrait_Background.jpg" tabindex="0" alt="">
+                    <div class="card__list--content">
+                        <h2 class="card__list--content--title" tabindex="0">Background Portrait</h2>
+                        <div class="card__list--content--like">
+                            <label id="like-398847109" for="like-398847109-input" class="like__counter">55</label>
+                            <input id="like-398847109-input" aria-label="55 j'aime" class="like__input" type="checkbox">
+                        </div>
+                    </div>
+                </li>
+                <li class="card__list card__list--picture">
+                    <img class="card__list--cover" width="100" src="/assets/images/Sample Photos/Mimi/Portrait_Nora.jpg" tabindex="0" alt="">
+                    <div class="card__list--content">
+                        <h2 class="card__list--content--title" tabindex="0">Nora Portrait</h2>
+                        <div class="card__list--content--like">
+                            <label id="like-2523434634" for="like-2523434634-input" class="like__counter">63</label>
+                            <input id="like-2523434634-input" aria-label="63 j'aime" class="like__input" type="checkbox">
+                        </div>
+                    </div>
+                </li>
+                <li class="card__list card__list--picture">
+                    <img class="card__list--cover" width="100" src="/assets/images/Sample Photos/Mimi/Portrait_Wednesday.jpg" tabindex="0" alt="">
+                    <div class="card__list--content">
+                        <h2 class="card__list--content--title" tabindex="0"> Portrait Wednesday</h2>
+                        <div class="card__list--content--like">
+                            <label id="like-2525345343" for="like-2525345343-input" class="like__counter">34</label>
+                            <input id="like-2525345343-input" aria-label="34 j'aime" class="like__input" type="checkbox">
+                        </div>
+                    </div>
+                </li>
+                <li class="card__list card__list--picture">
+                    <img class="card__list--cover" width="100" src="/assets/images/Sample Photos/Mimi/Travel_HillsideColor.jpg" tabindex="0" alt="">
+                    <div class="card__list--content">
+                        <h2 class="card__list--content--title" tabindex="0">Hillside color</h2>
+                        <div class="card__list--content--like">
+                            <label id="like-625025343" for="like-625025343-input" class="like__counter">85</label>
+                            <input id="like-625025343-input" aria-label="85 j'aime" class="like__input" type="checkbox">
+                        </div>
+                    </div>
+                </li>
+                <li class="card__list card__list--picture">
+                    <img class="card__list--cover" width="100" src="/assets/images/Sample Photos/Mimi/Travel_Lonesome.jpg" tabindex="0" alt="">
+                    <div class="card__list--content">
+                        <h2 class="card__list--content--title" tabindex="0">Lonesome</h2>
+                        <div class="card__list--content--like">
+                            <label id="like-623534343" for="like-623534343-input" class="like__counter">88</label>
+                            <input id="like-623534343-input" aria-label="88 j'aime" class="like__input" type="checkbox">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
     </main>
     <div id="contact_modal">
-        <div class="modal">
-            <header>
-                <h2>Contactez-moi</h2>
-                <br> Mimi Keel
+        <div class="modal" tabindex="0">
+            <header tabindex="0">
+                <h2>Contactez-moi <br> Mimi Keel</h2>
+
                 <img src="assets/icons/close.svg" onclick="closeModal()" />
             </header>
             <form>

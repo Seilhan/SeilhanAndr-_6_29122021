@@ -10,7 +10,7 @@ header {
     height: 90px;
     margin: 20px 140px;
     padding: 0 30px;
-    max-width: 1400px;
+    max-width: 1200px;
 }
 
 #profil {
@@ -19,8 +19,36 @@ header {
     align-items: center;
     background-color: #FAFAFA;
     height: 300px;
-    margin: 30px 100px;
     gap: 80px;
+}
+
+#widget {
+    position: fixed;
+    bottom: 50px;
+    left: 82%;
+    background-color: #D3573C;
+    width: 225px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+    font-weight: 500;
+    transform: translateY(50px);
+    animation-name: slideIn;
+    animation-delay: 1.75s;
+    animation-duration: 0.85s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
+
+#widget__like-count::after {
+    content: "\f004";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    display: inline-block;
+    margin-left: 10px;
 }
 
 .photographer-hearder {
@@ -33,6 +61,75 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-top: 15px;
+}
+
+#filter__title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#card__photographer {
+    display: block;
+}
+
+.cards__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 25px 0 0 0;
+    gap: 30px;
+}
+
+.card__list {
+    list-style: none;
+    width: 100%;
+    max-width: 380px;
+    flex: 1;
+    min-width: 280px;
+}
+
+.card__list--cover {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.card__list--cover:hover {
+    transform: translateY(-2px) scale(1.02);
+    transition: all 0.25s ease;
+    box-shadow: 0 3px 3px rgb(0 0 0 / 10%);
+}
+
+.card__list--content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #901c1c;
+    padding-top: 10px;
+}
+
+.card__list--picture .card__list--video {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.card__list--content--title {
+    margin: 0;
+    color: #901c1c;
+    font-size: 20px;
+    font-weight: 100;
 }
 
 .contact_button {
@@ -46,6 +143,10 @@ header {
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.contact_button:hover {
+    background-color: #d3573c;
 }
 
 .modal {
@@ -119,9 +220,9 @@ form input {
     outline: none;
 }
 
-.select-box__current:focus+.select-box__list {
+.select-box__current:focus .select-box__list {
     opacity: 1;
-    z-index: 0;
+    z-index: 1;
     animation-name: none;
 }
 
@@ -145,6 +246,7 @@ form input {
 
 .select-box__value {
     display: flex;
+    position: relative;
 }
 
 .select-box__input {
@@ -174,7 +276,7 @@ form input {
     padding: 0;
     overflow: auto;
     margin: 0;
-    background: red;
+    background: #901c1c;
     list-style: none;
     opacity: 0;
     z-index: -1;
