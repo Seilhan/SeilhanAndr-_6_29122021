@@ -13,7 +13,7 @@ function setProfilInfo(data) {
 }
 
 function setMedias(medias) {
-    // console.log(medias);
+    console.log(medias);
     const cards = document.querySelector('.cards__list');
     medias.forEach(media => {
 
