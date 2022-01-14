@@ -44,7 +44,7 @@ function setMedias(medias) {
 async function getPhotographers() {
     const id = new URLSearchParams(window.location.search).get('id');
 
-    const response = await fetch("/data/photographers.json");
+    const response = await fetch("data/photographers.json");
     const { photographers, media } = await response.json();
 
     //console.log(media);

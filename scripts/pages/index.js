@@ -21,7 +21,7 @@
             <article class="photographer">
                 <a href="photographer.html?id=${data.id}" aria-label="${data.name}">
                     <div class="photographer__cover">
-                        <img width="100" src="/assets/photographers/${photo}-xxlight.jpg" alt="${data.name}">
+                        <img width="100" src="assets/photographers/${photo}-xxlight.jpg" alt="${data.name}">
                     </div>
                     <h2 class="photographer__title" tabindex="0">${data.name}</h2>
                 </a>
