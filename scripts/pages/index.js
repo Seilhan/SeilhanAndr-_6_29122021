@@ -5,7 +5,6 @@
 
     function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
-
         photographers.forEach((photographer) => {
             const photographerModel = photographerFactory(photographer);
             photographersSection.appendChild(photographerModel);

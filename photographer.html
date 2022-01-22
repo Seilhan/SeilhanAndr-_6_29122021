@@ -30,7 +30,7 @@
                 <img width="100" src="assets/photographers/MimiKeel-light.jpg" alt="Mimi Keel">
             </div>
         </section>
-        <aside id="widget">
+        <aside id="widget" tabindex="0">
             <span id="widget__like-count">680</span>
             <span>400€ / jour</span>
         </aside>
@@ -55,13 +55,13 @@
                         <img class="select-box__icon" src="assets/icons/arrow.svg" alt="Arrow Icon" aria-hidden="true" />
                         <ul class="select-box__list">
                             <li>
-                                <label class="select-box__option" for="0" aria-hidden="aria-hidden" tabindex="-1">Popularité</label>
+                                <label class="select-box__option" for="0" aria-hidden="aria-hidden">Popularité</label>
                             </li>
                             <li>
-                                <label class="select-box__option" for="1" aria-hidden="aria-hidden" tabindex="-1">Date</label>
+                                <label class="select-box__option" for="1" aria-hidden="aria-hidden">Date</label>
                             </li>
                             <li>
-                                <label class="select-box__option" for="2" aria-hidden="aria-hidden" tabindex="-1">Titre</label>
+                                <label class="select-box__option" for="2" aria-hidden="aria-hidden">Titre</label>
                             </li>
                         </ul>
                     </div>
@@ -82,7 +82,7 @@
                     </div>
                 </li> -->
                 <!-- <li class="card__list card__list--picture">
-                    <img class="card__list--cover" width="100" src="/assets/photos/243/Animals_Rainbow-light.jpg" tabindex="0" alt="">
+                    <img class="card__list--cover" width="100" src="/assets/photos/243/Animals_Rainbow-light.jpg" tabindex="0"  alt="">
                     <div class="card__list--content">
                         <h2 class="card__list--content--title" tabindex="0">Bird rainbow</h2>
                         <div class="card__list--content--like">
@@ -174,13 +174,32 @@
             </ul>
         </section>
     </main>
+    <div class="lightbox">
+        <div class="lightbox__content">
+            <span class="lightbox__icon--left " data-directioninput="previous" tabindex="0">&lt</span>
+            <div>
+                <div class="lightbox__container" tabindex="0">
+                    <figure>
+                        <video class="lightbox__cover" aria-label="agrandir" controls src="assets/photos/243/Animals_Wild_Horses_in_the_mountains.mp4"></video>
+                        <img class="lightbox__cover" id="623534343" src="assets/photos/243/Travel_Lonesome.jpg" alt="">
+                        <figcaption class="lightbox__title" tabindex="0">Lonesome</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <span class="lightbox__icon--right " data-directioninput="next" tabindex="0">&gt</span>
+            <div class="lightbox__icon--close" id="closelightbox">
+                <img class="lightbox__icon--close" src="assets/icons/close_white.svg" alt="lightbox close button" tabindex="0">
+            </div>
+        </div>
+    </div>
+
     <div id="contact_modal">
         <div class="modal" tabindex="0">
             <header class="modal__header" tabindex="0">
                 <h2 class="title__modal">Contactez-moi <br> Mimi Keel</h2>
                 <img src="assets/icons/close.svg" onclick="closeModal()" />
             </header>
-            <form>
+            <form id="contactModalId">
                 <div class="modal__content">
                     <label>Prénom</label>
                     <input/>
@@ -195,8 +214,9 @@
             </form>
         </div>
     </div>
+
     <script src="scripts/utils/contactForm.js"></script>
-    <script src=" scripts/pages/photographer.js"></script>
+    <script type="module" src=" scripts/pages/photographer.js"></script>
 </body>
 
 </html>
