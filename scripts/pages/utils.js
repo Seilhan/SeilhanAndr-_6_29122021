@@ -47,7 +47,7 @@ function buildCard(media, medias) {
         //console.log(e.target);
     });
 
-    //console.log(imgElement);
+    console.log(imgElement);
 
     cardListContent.appendChild(h2Element);
     cardListContent.appendChild(divContentLikeElement);
