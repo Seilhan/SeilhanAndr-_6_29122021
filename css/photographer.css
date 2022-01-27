@@ -138,6 +138,11 @@ header {
     font-weight: 100;
 }
 
+.fa-heart:before {
+    content: "\f004";
+    margin-left: 10px;
+}
+
 .contact_button {
     font-size: 20px;
     font-weight: bold;
