@@ -7,6 +7,9 @@ function setProfilInfo(data) {
     document.querySelector('.photographer__cover').innerHTML = `<img width="100" src="assets/photographers/${photo}-xxlight.jpg" alt="${data.name}">`;
 }
 
+
+
+
 function buildCard(media, medias) {
     const listElement = document.createElement('li');
     listElement.setAttribute('class', 'card__list card__list--picture');
@@ -41,9 +44,11 @@ function buildCard(media, medias) {
     const contentHeart = document.createElement('i');
     contentHeart.setAttribute('class', 'fas fa-heart');
     contentHeart.addEventListener('click', e => {
-        console.log(e.target);
+        //console.log(e.target);
     });
+
     //console.log(imgElement);
+
     cardListContent.appendChild(h2Element);
     cardListContent.appendChild(divContentLikeElement);
     divContentLikeElement.appendChild(labelElement);
@@ -78,7 +83,7 @@ function openLightBox(el, medias) {
     const mediaId = el.target.getAttribute('data-id');
     let media = medias.find(el => el.id == mediaId);
     if (!mediaId) return
-    console.log(medias, mediaId, el.currentTarget);
+        //console.log(medias, mediaId, el.currentTarget);
     displayLB(media);
 
     function setNextMedia() {
@@ -120,7 +125,7 @@ function displayLB(media) {
 
     } else {
         tmpl = `<figure>
-        <img class="lightbox__cover" src="assets/photos/${media.photographerId}/${media.image}" alt="">
+        <img class="lightbox__cover" src="assets/photos/${media.photographerId}/${media.image}" alt="${media.title}">
         <figcaption class="lightbox__title" tabindex="0">${media.title}</figcaption>
         </figure>`;
     }
