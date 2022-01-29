@@ -66,7 +66,10 @@ function setMedias(medias) {
         const card = buildCard(media, medias);
         cards.appendChild(card);
     });
-
+    let totalLikes = 0;
+    const totalLike = totalLikes + medias.likes;
+    totalLikes.textContent = medias.likes;
+    console.log(totalLikes);
 }
 
 function openLightBox(el, medias) {
