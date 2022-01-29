@@ -5,6 +5,8 @@ function setProfilInfo(data) {
     document.querySelector('.photographer__infos__tagline').textContent = data.tagline;
     const photo = data.portrait.replace('.jpg', '');
     document.querySelector('.photographer__cover').innerHTML = `<img width="100" src="assets/photographers/${photo}-xxlight.jpg" alt="${data.name}">`;
+    document.querySelector(".widget__like-count-total").textContent = `${data.price}€ / jour`;
+
 }
 
 
@@ -47,7 +49,7 @@ function buildCard(media, medias) {
         //console.log(e.target);
     });
 
-    console.log(imgElement);
+    //console.log(imgElement);
 
     cardListContent.appendChild(h2Element);
     cardListContent.appendChild(divContentLikeElement);
@@ -61,15 +63,17 @@ function buildCard(media, medias) {
 
 function setMedias(medias) {
     //console.log(medias);
+    let totalLikes = 0;
     const cards = document.querySelector('.cards__list');
+
     medias.forEach(media => {
         const card = buildCard(media, medias);
         cards.appendChild(card);
+        totalLikes = totalLikes + media.likes;
     });
-    let totalLikes = 0;
-    const totalLike = totalLikes + medias.likes;
-    totalLikes.textContent = medias.likes;
-    console.log(totalLikes);
+
+    document.querySelector("#widget__like-count").textContent = totalLikes;
+
 }
 
 function openLightBox(el, medias) {
