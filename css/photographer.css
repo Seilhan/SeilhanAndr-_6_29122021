@@ -141,6 +141,13 @@ header {
 .fa-heart:before {
     content: "\f004";
     margin-left: 10px;
+    cursor: pointer;
+}
+
+.fa-heart:hover {
+    transform: scale(1.2);
+    transition: 0.2s ease;
+    color: #d3573c;
 }
 
 .contact_button {

@@ -1,18 +1,23 @@
+fetch("data/photographers.json")
+    .then(function(response) {
+        return response.json()
+    }).then(function(data) {
+        console.log(data);
+    })
+
 function setProfilInfo(data) {
-    //console.log(data);
+
+    const photo = data.portrait.replace('.jpg', '');
     document.querySelector('.photographer__title').textContent = data.name;
     document.querySelector('.photographer__infos__local').textContent = `${data.city}  ${data.country}`;
     document.querySelector('.photographer__infos__tagline').textContent = data.tagline;
-    const photo = data.portrait.replace('.jpg', '');
     document.querySelector('.photographer__cover').innerHTML = `<img width="100" src="assets/photographers/${photo}-xxlight.jpg" alt="${data.name}">`;
     document.querySelector(".widget__like-count-total").textContent = `${data.price}€ / jour`;
 
 }
 
-
-
-
 function buildCard(media, medias) {
+
     const listElement = document.createElement('li');
     listElement.setAttribute('class', 'card__list card__list--picture');
     listElement.setAttribute('data-id', media.id);
@@ -38,18 +43,27 @@ function buildCard(media, medias) {
     divContentLikeElement.setAttribute('class', 'card__list--content--like');
 
     const labelElement = document.createElement('label');
-    labelElement.setAttribute('id', media.id);
+    labelElement.setAttribute('id', "label-" + media.id);
     labelElement.setAttribute('for', media.id);
     labelElement.setAttribute('class', 'like__counter');
     labelElement.textContent = media.likes;
 
     const contentHeart = document.createElement('i');
     contentHeart.setAttribute('class', 'fas fa-heart');
-    contentHeart.addEventListener('click', e => {
-        //console.log(e.target);
-    });
+    contentHeart.setAttribute('data-media-id', media.id);
 
-    //console.log(imgElement);
+    contentHeart.addEventListener("click", e => {
+
+        const currentLabelElement = document.getElementById("label-" + e.target.getAttribute("data-media-id"));
+        let countLike = parseInt(currentLabelElement.textContent);
+        countLike += 1;
+        currentLabelElement.textContent = countLike;
+
+        const widgetLikeCountElement = document.getElementById('widget__like-count');
+        let totalLikes = parseInt(widgetLikeCountElement.textContent) + 1;
+        widgetLikeCountElement.textContent = totalLikes;
+
+    });
 
     cardListContent.appendChild(h2Element);
     cardListContent.appendChild(divContentLikeElement);
@@ -62,7 +76,7 @@ function buildCard(media, medias) {
 }
 
 function setMedias(medias) {
-    //console.log(medias);
+
     let totalLikes = 0;
     const cards = document.querySelector('.cards__list');
 
@@ -90,7 +104,7 @@ function openLightBox(el, medias) {
     const mediaId = el.target.getAttribute('data-id');
     let media = medias.find(el => el.id == mediaId);
     if (!mediaId) return
-        //console.log(medias, mediaId, el.currentTarget);
+
     displayLB(media);
 
     function setNextMedia() {
@@ -136,7 +150,28 @@ function displayLB(media) {
         <figcaption class="lightbox__title" tabindex="0">${media.title}</figcaption>
         </figure>`;
     }
+
     lightboxContainer.innerHTML = tmpl;
 }
 
+
+
+const fliterInputPopularityElement = document.getElementById('input-filter-popularity');
+const fliterInputDateElement = document.getElementById('input-filter-date');
+const fliterInputTitleElement = document.getElementById('input-filter-title');
+
+fliterInputPopularityElement.addEventListener("input", (e) => {});
+
+fliterInputDateElement.addEventListener('change', function() {});
+
+fliterInputTitleElement.addEventListener('change', function() {});
+
 export { setProfilInfo, setMedias }
+
+
+//fetch('https://jsonplaceholder.typicode.com/users')
+//     .then(function(response) {
+//         return response.json()
+//     }).then(function(data) {
+//         console.log(data);
+//     })

@@ -1,9 +1,11 @@
     async function getPhotographers() {
+
         const response = await fetch("data/photographers.json");
         return await response.json();
     }
 
     function displayData(photographers) {
+
         const photographersSection = document.querySelector(".photographer_section");
         photographers.forEach((photographer) => {
             const photographerModel = photographerFactory(photographer);
@@ -14,6 +16,7 @@
 
 
     function photographerFactory(data) {
+
         const li = document.createElement('li');
         const photo = data.portrait.replace('.jpg', '');
 
@@ -32,14 +35,18 @@
                     </div>
             </article>
         </li>`;
+
         return li
 
     }
 
+    // Récupère les datas des photographes
+
     async function init() {
-        // Récupère les datas des photographes
+
         const { photographers } = await getPhotographers();
         displayData(photographers);
     };
+
 
     init();
