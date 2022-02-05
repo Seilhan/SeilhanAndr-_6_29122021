@@ -13,8 +13,3 @@ contactForm.addEventListener("submit", function(event) {
     event.preventDefault();
     closeModal();
 });
-
-
-
-const selectbox = document.querySelectorAll('.select-box__current')[0];
-document.querySelectorAll('.select-box__option').forEach((btn) => btn.addEventListener("click", () => selectbox.blur()));

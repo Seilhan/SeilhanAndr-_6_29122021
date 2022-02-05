@@ -1,10 +1,3 @@
-fetch("data/photographers.json")
-    .then(function(response) {
-        return response.json()
-    }).then(function(data) {
-        console.log(data);
-    })
-
 function setProfilInfo(data) {
 
     const photo = data.portrait.replace('.jpg', '');
@@ -75,18 +68,42 @@ function buildCard(media, medias) {
 
 }
 
-function setMedias(medias) {
+function fncOrder(order, a, b) {
+    switch (order) {
+        case "input-filter-popularity":
+            return a.likes <= b.likes ? 1 : -1
+            break;
+        case "input-filter-date":
+            return a.date <= b.date ? 1 : -1
+            break;
+        case "input-filter-title":
+            return (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0);
+            break;
+
+        default:
+            break;
+    }
+
+}
+
+function setMedias(medias, order = "input-filter-popularity") {
 
     let totalLikes = 0;
     const cards = document.querySelector('.cards__list');
 
-    medias.forEach(media => {
+    const filtermedias = medias.sort((a, b) => fncOrder(order, a, b))
+
+    cards.innerHTML = '';
+
+    filtermedias.forEach(media => {
         const card = buildCard(media, medias);
         cards.appendChild(card);
         totalLikes = totalLikes + media.likes;
     });
 
     document.querySelector("#widget__like-count").textContent = totalLikes;
+
+
 
 }
 
@@ -154,22 +171,5 @@ function displayLB(media) {
     lightboxContainer.innerHTML = tmpl;
 }
 
-const fliterInputPopularityElement = document.getElementById('input-filter-popularity');
-const fliterInputDateElement = document.getElementById('input-filter-date');
-const fliterInputTitleElement = document.getElementById('input-filter-title');
-
-fliterInputPopularityElement.addEventListener('input', (e) => {});
-
-fliterInputDateElement.addEventListener('input', (e) => {});
-
-fliterInputTitleElement.addEventListener('input', (e) => {});
 
 export { setProfilInfo, setMedias }
-
-
-//fetch('https://jsonplaceholder.typicode.com/users')
-//     .then(function(response) {
-//         return response.json()
-//     }).then(function(data) {
-//         console.log(data);
-//     })
