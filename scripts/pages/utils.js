@@ -154,17 +154,15 @@ function displayLB(media) {
     lightboxContainer.innerHTML = tmpl;
 }
 
-
-
 const fliterInputPopularityElement = document.getElementById('input-filter-popularity');
 const fliterInputDateElement = document.getElementById('input-filter-date');
 const fliterInputTitleElement = document.getElementById('input-filter-title');
 
-fliterInputPopularityElement.addEventListener("input", (e) => {});
+fliterInputPopularityElement.addEventListener('input', (e) => {});
 
-fliterInputDateElement.addEventListener('change', function() {});
+fliterInputDateElement.addEventListener('input', (e) => {});
 
-fliterInputTitleElement.addEventListener('change', function() {});
+fliterInputTitleElement.addEventListener('input', (e) => {});
 
 export { setProfilInfo, setMedias }
 
