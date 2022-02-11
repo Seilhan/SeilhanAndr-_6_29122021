@@ -93,11 +93,11 @@
         </div>
     </div>
 
-    <div id="contact_modal">
-        <div class="modal" tabindex="0">
-            <header class="modal__header" tabindex="0">
-                <h2 class="title__modal">Contactez-moi <br> Mimi Keel</h2>
-                <img src="assets/icons/close.svg" onclick="closeModal()" />
+    <div id="contact_modal" tabindex="-1">
+        <div class="modal">
+            <header class="modal__header">
+                <h2 class="title__modal" tabindex="0">Contactez-moi<br>Mimi Keel</h2>
+                <img src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" />
             </header>
             <form id="contactModalId">
                 <div class="modal__content">
@@ -112,6 +112,7 @@
                 </div>
                 <button class="contact_button">Envoyer</button>
             </form>
+           
         </div>
     </div>
 

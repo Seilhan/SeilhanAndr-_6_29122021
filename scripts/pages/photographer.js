@@ -1,4 +1,4 @@
-import { setProfilInfo, setMedias } from "./utils.js"
+import { setProfilInfo, setMedias} from "./utils.js"
 
 
 

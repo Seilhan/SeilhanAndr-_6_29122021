@@ -72,13 +72,10 @@ function fncOrder(order, a, b) {
     switch (order) {
         case "input-filter-popularity":
             return a.likes <= b.likes ? 1 : -1
-            break;
         case "input-filter-date":
             return a.date <= b.date ? 1 : -1
-            break;
         case "input-filter-title":
             return (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0);
-            break;
 
         default:
             break;
@@ -147,6 +144,8 @@ function openLightBox(el, medias) {
 }
 
 
+
+
 function displayLB(media) {
 
     const lightboxContainer = document.querySelector(".lightbox__container");
@@ -172,4 +171,4 @@ function displayLB(media) {
 }
 
 
-export { setProfilInfo, setMedias }
+export { setProfilInfo, setMedias}
