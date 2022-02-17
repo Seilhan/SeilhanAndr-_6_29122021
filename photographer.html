@@ -76,7 +76,7 @@
     </main>
     <div class="lightbox">
         <div class="lightbox__content" tabindex="0">
-            <span class="lightbox__icon--left " data-directioninput="previous" tabindex="0">&lt</span>
+            <a class="lightbox__icon--left " data-directioninput="previous" tabindex="0">&lt</a>
             <div>
                 <div class="lightbox__container" tabindex="0">
                     <figure>
@@ -86,28 +86,30 @@
                     </figure>
                 </div>
             </div>
-            <span class="lightbox__icon--right " data-directioninput="next" tabindex="0">&gt</span>
-            <div class="lightbox__icon--close" id="closelightbox">
-                <img class="lightbox__icon--close" src="assets/icons/close_white.svg" alt="lightbox close button" tabindex="0">
-            </div>
+            <a class="lightbox__icon--right " data-directioninput="next" tabindex="0">&gt</a>
+            <a class="lightbox__icon--close" id="closelightbox">
+                <img src="assets/icons/close_white.svg" alt="lightbox close button" tabindex="0">
+            </a>
         </div>
     </div>
 
     <div id="contact_modal" tabindex="-1">
-        <div class="modal">
+        <div class="modal" tabindex="0">
             <header class="modal__header">
                 <h2 class="title__modal" tabindex="0">Contactez-moi<br>Mimi Keel</h2>
-                <img src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" />
+                <a class="modal__close--btn">
+                    <img src="assets/icons/close.svg" onclick="closeModal()" tabindex="0">
+                </a>
             </header>
             <form id="contactModalId">
                 <div class="modal__content">
-                    <label>Prénom</label>
+                    <label for="prénom" tabindex="0">Prénom</label>
                     <input/>
-                    <label>Nom</label>
+                    <label for="nom"  tabindex="0">Nom</label>
                     <input/>
-                    <label>Email</label>
+                    <label for="email"  tabindex="0">Email</label>
                     <input />
-                    <label for="message">Votre message</label>
+                    <label for="message" tabindex="0">Votre message</label>
                     <textarea></textarea>
                 </div>
                 <button class="contact_button">Envoyer</button>

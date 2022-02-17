@@ -144,7 +144,7 @@ header {
     cursor: pointer;
 }
 
-.fa-heart:hover {
+.fa-heart:hover, .fa-heart.active {
     transform: scale(1.2);
     transition: 0.2s ease;
     color: #d3573c;
