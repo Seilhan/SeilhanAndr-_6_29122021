@@ -44,9 +44,8 @@ function buildCard(media, medias) {
     labelElement.setAttribute('for', media.id);
     labelElement.setAttribute('class', 'like__counter');
     labelElement.textContent = media.likes;
- 
 
-
+   
     const contentHeart = document.createElement('i');
     contentHeart.setAttribute('class', 'fas fa-heart');
     contentHeart.setAttribute('data-media-id', media.id);
@@ -115,12 +114,12 @@ function setMedias(medias, order = "input-filter-popularity") {
 
 
 function openLightBox(el, medias) {
-
+    
     const lightbox = document.querySelector(".lightbox");
     const lightBoxClose = document.querySelector(".lightbox__icon--close");
     const lightBoxNext = document.querySelector(".lightbox__icon--right");
     const lightBoxPrev = document.querySelector(".lightbox__icon--left");
-   
+    
     lightBoxClose.addEventListener("click", closeLightBox);
     lightBoxNext.addEventListener("click", setNextMedia);
     lightBoxPrev.addEventListener("click", setPrevMedia);
@@ -136,12 +135,12 @@ function openLightBox(el, medias) {
     lightBoxClose.addEventListener("keydown", (el) =>  {
         if (el.key == 'Enter') closeLightBox();
     });
-   
+    
    
 function closeLightBox() {
     lightbox.style.display = "none";
     document.removeEventListener('keydown', kbNav);
-    lightbox.focus();
+  
 }
 
     function kbNav(e) {
@@ -176,13 +175,14 @@ function closeLightBox() {
         } else {
             media = medias[getmediaIndex - 1];
         }
-
+       
         displayLB(media);
+      
     }
-
+   
     lightbox.style.display = "block";
     document.addEventListener('keydown', kbNav, {passive:true} );
-  
+    lightbox.focus();
 }
 
 
@@ -208,8 +208,9 @@ function displayLB(media) {
         </figure>`;
     }
    
-    lightboxContainer.innerHTML = tmpl;
    
+    lightboxContainer.innerHTML = tmpl;
+    
    
 }
 
