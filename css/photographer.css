@@ -80,6 +80,20 @@ header {
     display: block;
 }
 
+#profil .photographer__title {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+#profil .photographer__infos__local {
+    font-size: x-large;
+}
+
+#profil .photographer__infos__tagline {
+    font-size: 15px;
+    padding-top: 15px;
+}
+
 .cards__list {
     display: flex;
     flex-wrap: wrap;
@@ -177,7 +191,15 @@ header {
     justify-content: space-between;
     padding: 35px;
     margin-left: 27%;
+    position: relative;
 }
+
+.modal__close--btn {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+
 
 .modal header {
     display: flex;

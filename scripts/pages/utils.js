@@ -2,11 +2,12 @@ function setProfilInfo(data) {
 
     const photo = data.portrait.replace('.jpg', '');
     document.querySelector('.photographer__title').textContent = data.name;
+    document.querySelector('.title__modal__name').textContent = data.name;
     document.querySelector('.photographer__infos__local').textContent = `${data.city}  ${data.country}`;
     document.querySelector('.photographer__infos__tagline').textContent = data.tagline;
     document.querySelector('.photographer__cover').innerHTML = `<img width="100" src="assets/photographers/${photo}-xxlight.jpg" alt="${data.name}">`;
     document.querySelector(".widget__like-count-total").textContent = `${data.price}€ / jour`;
-
+    
 }
 
 function buildCard(media, medias) {

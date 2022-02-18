@@ -1,7 +1,10 @@
+
 function displayModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "block";
     modal.focus();
+    const closeModalBtn = document.querySelector('.modal__close--btn');
+    closeModalBtn.addEventListener('keydown', closeModal);
 }
 
 function closeModal() {

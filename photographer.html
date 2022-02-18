@@ -14,7 +14,9 @@
     <header>
         <a href="index.html" tabindex="0"><img src="assets/icons/logo.png" class="logo" alt="Fisheye Home page" /></a>
     </header>
+
     <main id="main">
+
         <section id="profil">
             <div class="photographer-hearder">
                 <div class="photographer__content" tabindex="0">
@@ -30,15 +32,16 @@
                 <img width="100" src="assets/photographers/MimiKeel-light.jpg" alt="Mimi Keel">
             </div>
         </section>
+
         <aside id="widget" tabindex="0">
             <span id="widget__like-count"></span>
             <span class="widget__like-count-total"></span>
         </aside>
+
         <section id="filter">
             <div class="filter-selector">
                 <span id="filter__title" tabindex="0">Trier par</span>
-
-                <div class="select-box">
+                <div class="select-box" tabindex="0">
                     <div class="select-box__current" tabindex="0">
                         <div class="select-box__value">
                             <input class="select-box__input" type="radio" id="input-filter-popularity" value="1" name="filter" checked="checked" />
@@ -61,18 +64,19 @@
                                 <label class="select-box__option" for="input-filter-date" aria-hidden="aria-hidden">Date</label>
                             </li>
                             <li>
-                                <label class="select-box__option" for="input-filter-title" aria-hidden="aria-hidden">Titre</label>
+                                <label class="select-box__option" for="input-filter-title"  aria-hidden="aria-hidden">Titre</label>
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </section>
+
         <section id="card__photographer">
             <ul class="cards__list">
             </ul>
         </section>
+
     </main>
     <div class="lightbox" aria-hidden="false" tabindex="-1">
         <div class="lightbox__content" >
@@ -87,34 +91,32 @@
                 </div>
             </div>
             <a class="lightbox__icon--right " data-directioninput="next" tabindex="0">&gt</a>
-            <a class="lightbox__icon--close" id="closelightbox">
-                <img src="assets/icons/close_white.svg" alt="lightbox close button" tabindex="0">
+                <img src="assets/icons/close_white.svg" alt="lightbox close button" tabindex="-1">
             </a>
         </div>
     </div>
 
     <div id="contact_modal" tabindex="-1">
-        <div class="modal">
+        <div class="modal" tabindex="0">
             <header class="modal__header">
-                <h2 class="title__modal" tabindex="0">Contactez-moi<br>Mimi Keel</h2>
-                <a class="modal__close--btn">
-                    <img src="assets/icons/close.svg" onclick="closeModal()" tabindex="0">
-                </a>
+                <h2 class="title__modal" tabindex="0">Contactez-moi<br><span class="title__modal__name"></span></h2>
             </header>
             <form id="contactModalId">
                 <div class="modal__content">
-                    <label for="prénom" tabindex="0">Prénom</label>
-                    <input/>
+                    <label for="prenom" tabindex="0">Prénom</label>
+                    <input id="prenom"/>
                     <label for="nom"  tabindex="0">Nom</label>
-                    <input/>
+                    <input id="nom"/>
                     <label for="email"  tabindex="0">Email</label>
-                    <input />
+                    <input id="email"/>
                     <label for="message" tabindex="0">Votre message</label>
                     <textarea></textarea>
                 </div>
                 <button class="contact_button">Envoyer</button>
             </form>
-           
+            <a class="modal__close--btn">
+                <img src="assets/icons/close.svg" onclick="closeModal()" tabindex="0">
+            </a>
         </div>
     </div>
 
