@@ -7,7 +7,7 @@ function setProfilInfo(data) {
     document.querySelector('.photographer__infos__tagline').textContent = data.tagline;
     document.querySelector('.photographer__cover').innerHTML = `<img width="100" src="assets/photographers/${photo}-xxlight.jpg" alt="${data.name}">`;
     document.querySelector(".widget__like-count-total").textContent = `${data.price}€ / jour`;
-    
+
 }
 
 function buildCard(media, medias) {
@@ -28,7 +28,6 @@ function buildCard(media, medias) {
     listElement.addEventListener("keydown", (el) =>  {
         if (el.key == 'Enter') openLightBox(el, medias)
     });
-   
   
     const cardListContent = document.createElement('div');
     cardListContent.setAttribute('class', 'card__list--content');
