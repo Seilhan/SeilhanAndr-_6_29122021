@@ -28,6 +28,7 @@ function buildCard(media, medias) {
     listElement.addEventListener("keydown", (el) =>  {
         if (el.key == 'Enter') openLightBox(el, medias)
     });
+   
   
     const cardListContent = document.createElement('div');
     cardListContent.setAttribute('class', 'card__list--content');
