@@ -186,8 +186,6 @@ function closeLightBox() {
     lightbox.focus();
 }
 
-
-
 function displayLB(media) {
    
     const lightboxContainer = document.querySelector(".lightbox__container");
@@ -197,7 +195,7 @@ function displayLB(media) {
     if (media.video !== undefined) {
         tmpl = `<figure>
         <video controls class="lightbox__cover">  
-        <source  tabindex="0" src="assets/photos/${media.photographerId}/${media.video}"type="video/mp4">
+        <source  tabindex="0" src="assets/photos/${media.photographerId}/${media.video}"type="video/mp4" alt="${media.title}">
         </video>
         <figcaption class="lightbox__title" tabindex="0">${media.title}</figcaption>
         </figure>`;
