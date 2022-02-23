@@ -1,6 +1,0 @@
-function de trie pour les dates titres et popularité 
-
-1 cibler l'élément sur lequel implementer la function
-2 récuperer les donnés de l'élément en question 
-3 trier les donnés
-4 afficher les donnés sur dom

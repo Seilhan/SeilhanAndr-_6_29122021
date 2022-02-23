@@ -9,7 +9,6 @@
         const photographersSection = document.querySelector(".photographer_section");
         photographers.forEach((photographer) => {
             const photographerModel = photographerFactory(photographer);
-            //console.log(photographerModel);
             photographersSection.appendChild(photographerModel);
         });
     };
