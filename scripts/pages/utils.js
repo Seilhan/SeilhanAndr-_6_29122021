@@ -10,6 +10,10 @@ function setProfilInfo(data) {
 
 }
 
+/***
+ * construction du Dom pour chaque photographe
+ */
+
 function buildCard(media, medias) {
 
     const listElement = document.createElement('li');
@@ -75,9 +79,12 @@ function buildCard(media, medias) {
     listElement.appendChild(cardListContent);
 
     return listElement;
-   
-
+  
 }
+
+/**
+ * fontion de trie par (popularité, date, titre)
+ **/
 
 function fncOrder(order, a, b) {
     switch (order) {
@@ -113,7 +120,9 @@ function setMedias(medias, order = "input-filter-popularity") {
 
 }
 
-
+/** 
+ * Ouverture et fermeture de la lightbox et sa navigation au clavier
+**/
 function openLightBox(el, medias) {
     
     const lightbox = document.querySelector(".lightbox");
@@ -143,6 +152,10 @@ function closeLightBox() {
     document.removeEventListener('keydown', kbNav);
   
 }
+
+/** 
+ * Navagation au clavier
+**/
 
     function kbNav(e) {
         if( e.key == 'ArrowRight') setNextMedia();
