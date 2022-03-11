@@ -3,11 +3,11 @@
 
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/icons/fisheye_favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Fisheye - photographe </title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/icons/fisheye_favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <title>Fisheye - photographe</title>
 </head>
 
 <body>
@@ -16,20 +16,25 @@
     </header>
 
     <main id="main">
-
         <section id="profil">
             <div class="photographer-hearder">
                 <div class="photographer__content" tabindex="0">
                     <h2 class="photographer__title">Mimi Keel</h2>
                 </div>
                 <div class="photographer__infos" tabindex="0">
-                    <div class="photographer__infos__local text--primary">London, UK</div>
-                    <div class="photographer__infos__tagline">Voir le beau dans le quotidien</div>
+                    <div class="photographer__infos__local text--primary">
+                        London, UK
+                    </div>
+                    <div class="photographer__infos__tagline">
+                        Voir le beau dans le quotidien
+                    </div>
                 </div>
             </div>
-            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+            <button class="contact_button" onclick="displayModal()">
+          Contactez-moi
+        </button>
             <div class="photographer__cover" tabindex="0">
-                <img width="100" src="assets/photographers/MimiKeel-light.jpg" alt="Mimi Keel">
+                <img width="100" src="assets/photographers/MimiKeel-light.jpg" alt="Mimi Keel" />
             </div>
         </section>
 
@@ -58,70 +63,105 @@
                         <img class="select-box__icon" src="assets/icons/arrow.svg" alt="Arrow Icon" aria-hidden="true" />
                         <ul class="select-box__list">
                             <li>
-                                <label class="select-box__option" for="input-filter-popularity" aria-hidden="aria-hidden">Popularité</label>
-                            </li>
-                            <li>
-                                <label class="select-box__option" for="input-filter-date" aria-hidden="aria-hidden">Date</label>
-                            </li>
-                            <li>
-                                <label class="select-box__option" for="input-filter-title"  aria-hidden="aria-hidden">Titre</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                                <label class="select-box__option" for="input-filter-popularity" aria-hidden="aria-hidden">Popularité</label
+                  >
+                </li>
+                <li>
+                  <label
+                    class="select-box__option"
+                    for="input-filter-date"
+                    aria-hidden="aria-hidden"
+                    >Date</label
+                  >
+                </li>
+                <li>
+                  <label
+                    class="select-box__option"
+                    for="input-filter-title"
+                    aria-hidden="aria-hidden"
+                    >Titre</label
+                  >
+                </li>
+              </ul>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section id="card__photographer">
-            <ul class="cards__list">
-            </ul>
-        </section>
-
+      <section id="card__photographer">
+        <ul class="cards__list"></ul>
+      </section>
     </main>
     <div class="lightbox" aria-hidden="false" tabindex="-1">
-        <div class="lightbox__content" >
-            <a class="lightbox__icon--left " data-directioninput="previous" tabindex="0">&lt</a>
-            <div>
-                <div class="lightbox__container">
-                    <figure>
-                        <video class="lightbox__cover" aria-label="agrandir" controls src="assets/photos/243/Animals_Wild_Horses_in_the_mountains.mp4"></video>
-                        <img class="lightbox__cover" id="623534343" src="assets/photos/243/Travel_Lonesome.jpg" alt="photo">
-                        <figcaption class="lightbox__title" tabindex="0">Lonesome</figcaption>
-                    </figure>
-                </div>
-            </div>
-            <a class="lightbox__icon--right " data-directioninput="next" tabindex="0">&gt</a>
+      <div class="lightbox__content">
+        <a
+          class="lightbox__icon--left"
+          data-directioninput="previous"
+          tabindex="0"
+          >&lt</a
+        >
+        <div>
+          <div class="lightbox__container">
+            <figure>
+              <video
+                class="lightbox__cover"
+                aria-label="agrandir"
+                controls
+                src="assets/photos/243/Animals_Wild_Horses_in_the_mountains.mp4"
+              ></video>
+              <img
+                class="lightbox__cover"
+                id="623534343"
+                src="assets/photos/243/Travel_Lonesome-light.jpg"
+                alt="photo"
+              />
+              <figcaption class="lightbox__title" tabindex="0">
+                Lonesome
+              </figcaption>
+            </figure>
+          </div>
         </div>
-        <a class="lightbox__icon--close" href="#">
-            <img src="assets/icons/close_white.svg" onclick="closeModal()" tabindex="0" alt="icone de fermeture">
-        </a>
+        <a class="lightbox__icon--right" data-directioninput="next" tabindex="0"
+          >&gt</a
+        >
+      </div>
+      <a class="lightbox__icon--close" href="#">
+        <img
+          src="assets/icons/close_white.svg"
+          onclick="closeModal()"
+          tabindex="0"
+          alt="icone de fermeture"
+        />
+      </a>
     </div>
     <div id="contact_modal" tabindex="-1">
-        <div class="modal" tabindex="0">
-            <header class="modal__header">
-                <h2 class="title__modal" tabindex="0">Contactez-moi<br><span class="title__modal__name"></span></h2>
-            </header>
-            <form id="contactModalId">
-                <div class="modal__content">
-                    <label for="prenom" tabindex="0">Prénom</label>
-                    <input id="prenom"/>
-                    <label for="nom"  tabindex="0">Nom</label>
-                    <input id="nom"/>
-                    <label for="email"  tabindex="0">Email</label>
-                    <input id="email"/>
-                    <label for="message" tabindex="0">Votre message</label>
-                    <textarea id="message"></textarea>
+      <div class="modal" tabindex="0">
+        <header class="modal__header">
+          <h2 class="title__modal" tabindex="0">
+            Contactez-moi<br /><span class="title__modal__name"></span>
+          </h2>
+        </header>
+        <form id="contactModalId">
+          <div class="modal__content">
+            <label for="prenom" tabindex="0">Prénom</label>
+                                <input id="prenom" />
+                                <label for="nom" tabindex="0">Nom</label>
+                                <input id="nom" />
+                                <label for="email" tabindex="0">Email</label>
+                                <input id="email" />
+                                <label for="message" tabindex="0">Votre message</label>
+                                <textarea id="message"></textarea>
+                    </div>
+                    <button class="contact_button">Envoyer</button>
+                    </form>
+                    <a class="modal__close--btn">
+                        <img src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" alt="icone de fermeture" />
+                    </a>
                 </div>
-                <button class="contact_button">Envoyer</button>
-            </form>
-            <a class="modal__close--btn">
-                <img src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" alt="icone de fermeture">
-            </a>
-        </div>
-    </div>
+            </div>
 
-    <script src="scripts/utils/contactForm.js"></script>
-    <script type="module" src=" scripts/pages/photographer.js"></script>
+            <script src="scripts/utils/contactForm.js"></script>
+            <script type="module" src=" scripts/pages/photographer.js"></script>
 </body>
 
 </html>

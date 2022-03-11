@@ -29,10 +29,10 @@ function buildCard(media, medias) {
     imgElement.setAttribute('data-id', media.id);
     listElement.appendChild(imgElement);
     listElement.addEventListener("click", (el) => openLightBox(el, medias));
-    listElement.addEventListener("keydown", (el) =>  {
+    listElement.addEventListener("keydown", (el) => {
         if (el.key == 'Enter') openLightBox(el, medias)
     });
-  
+
     const cardListContent = document.createElement('div');
     cardListContent.setAttribute('class', 'card__list--content');
 
@@ -50,19 +50,19 @@ function buildCard(media, medias) {
     labelElement.setAttribute('class', 'like__counter');
     labelElement.textContent = media.likes;
 
-   
+
     const contentHeart = document.createElement('i');
     contentHeart.setAttribute('class', 'fas fa-heart');
     contentHeart.setAttribute('data-media-id', media.id);
 
     contentHeart.addEventListener("click", e => {
         let additionalLike = 0;
-        if ( Number(labelElement.textContent) ==  media.likes) {
-            labelElement.textContent =  media.likes+1;
+        if (Number(labelElement.textContent) == media.likes) {
+            labelElement.textContent = media.likes + 1;
             additionalLike = 1;
             contentHeart.setAttribute('class', 'fas fa-heart active');
-        } else  {
-            labelElement.textContent =  media.likes;
+        } else {
+            labelElement.textContent = media.likes;
             additionalLike = -1;
             contentHeart.setAttribute('class', 'fas fa-heart');
         }
@@ -79,7 +79,7 @@ function buildCard(media, medias) {
     listElement.appendChild(cardListContent);
 
     return listElement;
-  
+
 }
 
 /**
@@ -122,53 +122,53 @@ function setMedias(medias, order = "input-filter-popularity") {
 
 /** 
  * Ouverture et fermeture de la lightbox et sa navigation au clavier
-**/
+ **/
 function openLightBox(el, medias) {
-    
+
     const lightbox = document.querySelector(".lightbox");
     const lightBoxClose = document.querySelector(".lightbox__icon--close");
     const lightBoxNext = document.querySelector(".lightbox__icon--right");
     const lightBoxPrev = document.querySelector(".lightbox__icon--left");
-    
+
     lightBoxClose.addEventListener("click", closeLightBox);
     lightBoxNext.addEventListener("click", setNextMedia);
     lightBoxPrev.addEventListener("click", setPrevMedia);
-    
-    lightBoxNext.addEventListener("keydown", (el) =>  {
+
+    lightBoxNext.addEventListener("keydown", (el) => {
         if (el.key == 'Enter') setNextMedia();
     });
 
-    lightBoxPrev.addEventListener("keydown", (el) =>  {
+    lightBoxPrev.addEventListener("keydown", (el) => {
         if (el.key == 'Enter') setPrevMedia();
     });
 
-    lightBoxClose.addEventListener("keydown", (el) =>  {
+    lightBoxClose.addEventListener("keydown", (el) => {
         if (el.key == 'Enter') closeLightBox();
     });
-    
-   
-function closeLightBox() {
-    lightbox.style.display = "none";
-    document.removeEventListener('keydown', kbNav);
-  
-}
 
-/** 
- * Navagation au clavier
-**/
+
+    function closeLightBox() {
+        lightbox.style.display = "none";
+        document.removeEventListener('keydown', kbNav);
+
+    }
+
+    /** 
+     * Navagation au clavier
+     **/
 
     function kbNav(e) {
-        if( e.key == 'ArrowRight') setNextMedia();
-        if( e.key == 'ArrowLeft') setPrevMedia();
-        if( e.key == 'Escape') closeLightBox();
-       
+        if (e.key == 'ArrowRight') setNextMedia();
+        if (e.key == 'ArrowLeft') setPrevMedia();
+        if (e.key == 'Escape') closeLightBox();
+
     }
-    
+
 
     const mediaId = el.target.getAttribute('data-id');
     let media = medias.find(el => el.id == mediaId);
     if (!mediaId) return
-   
+
     displayLB(media);
 
     function setNextMedia() {
@@ -185,26 +185,26 @@ function closeLightBox() {
     function setPrevMedia() {
         const getmediaIndex = medias.indexOf(media);
         if (getmediaIndex === 0) {
-            media = medias[medias.length-1];
+            media = medias[medias.length - 1];
         } else {
             media = medias[getmediaIndex - 1];
         }
-       
+
         displayLB(media);
-      
+
     }
-   
+
     lightbox.style.display = "block";
-    document.addEventListener('keydown', kbNav, {passive:true} );
+    document.addEventListener('keydown', kbNav, { passive: true });
     lightbox.focus();
 }
 
 function displayLB(media) {
-   
+
     const lightboxContainer = document.querySelector(".lightbox__container");
     let tmpl = document.querySelector(".lightbox__container");
     if (!media) return
-  
+
     if (media.video !== undefined) {
         tmpl = `<figure>
         <video controls class="lightbox__cover">  
@@ -215,16 +215,16 @@ function displayLB(media) {
 
     } else {
         tmpl = `<figure>
-        <img class="lightbox__cover"  tabindex="0" src="assets/photos/${media.photographerId}/${media.image}" alt="${media.title}">
+        <img class="lightbox__cover"  tabindex="0" src="assets/photos/${media.photographerId}/${media.image} alt="${media.title}">
         <figcaption class="lightbox__title" tabindex="0">${media.title}</figcaption>
         </figure>`;
     }
-   
-   
+
+
     lightboxContainer.innerHTML = tmpl;
-    
-   
+
+
 }
 
 
-export { setProfilInfo, setMedias}
+export { setProfilInfo, setMedias }
