@@ -214,8 +214,9 @@ function displayLB(media) {
         </figure>`;
 
     } else {
+        const photo = media.image.replace('.jpg', '');
         tmpl = `<figure>
-        <img class="lightbox__cover"  tabindex="0" src="assets/photos/${media.photographerId}/${media.image} alt="${media.title}">
+        <img class="lightbox__cover"  tabindex="0" src="assets/photos/${media.photographerId}/${photo}-light.jpg" alt="${media.title}">
         <figcaption class="lightbox__title" tabindex="0">${media.title}</figcaption>
         </figure>`;
     }
